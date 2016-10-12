@@ -13,3 +13,4 @@ Longitude is the line that cross through the Equator and Latitude is a transvers
 
 link plagiarism : https://drive.google.com/file/d/0B3KBdgP_72vSd2E5ejRBX1lxVlU/view
 link youtube : https://www.youtube.com/watch?v=g1twiauE2yY]
+link blog : https://wiwilutfiasih.wordpress.com/2016/10/11/geographic-information-system/
