@@ -1,5 +1,6 @@
 # geographic-information-system
 geographic information system
 
-By : Nurul Lutfiasih
+by : Nurul Lutfiasih <br>
+Lecturer : Rolly Maulana Awangga
 
