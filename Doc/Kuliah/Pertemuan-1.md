@@ -1,5 +1,5 @@
 # geographic-information-system
-geographic information system
+this is a little explanation about geographic information system
 
 By : Nurul Lutfiasih
 NPM : 1144022
