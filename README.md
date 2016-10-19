@@ -1,6 +1,6 @@
 # geographic-information-system
 geographic information system
 
-by : Nurul Lutfiasih <br>
-Lecturer : Rolly Maulana Awangga
-
+NPM | NAMA | KELAS |
+---- | --- | -- |
+1144022 | Nurul Lutfiasih | 3C |
