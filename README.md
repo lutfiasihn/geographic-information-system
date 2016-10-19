@@ -1,5 +1,5 @@
 # geographic-information-system
-geographic information system
+These are about assignments of Geographic Information System
 
   NPM | NAMA | KELAS |
   ---- | ------- | ------- |
