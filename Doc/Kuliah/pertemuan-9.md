@@ -1,0 +1,15 @@
+**Latar Belakang**
+
+bidang sistem informasi geografis atau GIS juga memilki acuan atau standar. Umumnya standar yang dibuat merupakan standar dalam hal akses dan penyimpanan data. Organisasi yang membuat standar dibidang GIS adalah Open Geospatial Consortium (OGC).Ada 8 standar yang berbasis layanan web (web service) yang memungkinkan terjadinya proses pertukaran dan berbagi data melalui web atau internet.Open web services atau layanan berbasis web ini sangat familiar buat yang berkecimpung di dunia pemetaan online. Layanan yang paling umum adalah WMS (web map service), WFS (web feature service), WCS (web coverage service). WMS merupakan layanan yang menyediakan peta atau data geospasial dalam bentuk gambar, WFS meryediakan peta atau data geospasial dalam bentuk vektor atau data itu sendiri, sedangkan WCS menyediakan data spasial berupa raster atau citra.
+
+** Pembahasan**
+
+WMSatau Web Map Service merupakan layanan basis data spasial secaraonline. WMS menghasilkan peta yang bergeoreferensi. Peta dalam halini adalah representasi visual dari geodata, dan bukan datageospasial itu sendiri. WMS meproduksi data yang bereferensigeografis secara dinamis dari informasi geografis (basis datageospasial). Peta itu sendiri merupakan informasi geografis yangdigambarkan secara dijital oleh komputer untuk keperluan penyajiandata spasial. Peta hasil WMS biasanya berupa gambar dengan formatPNG, GIS atau JPEG. Spesifikasi WMS dikeluarkan oleh OGC.
+
+WFSatau _Web Feature Service_ juga salah satu web service pada webgis yang merupakan layanan publikasi data geospasialpada tingkat fitur data spasial melalui media web. Disampingpenyajian data spasial melalui gambar/image yang dilakukan oleh WMS,klien dapat memperoleh informasi data geospasial hingga ke leverfitur yaitu baik geometri maupun data atributnya. Spesifikasi OGCuntuk WFS menggunakan teknologi XML (_Extensible Markup Language_) danprotokol HTTP (Hyper Text Transfer Protocol) sebagai mediapenyampaiannya. Atau lebih tepatnya menggunakan GML (_Geography MarkupLanguage_) yang merupakan subset dari XML. WFS-T atau Web FeatureService-Transactional merupakan layan yang memungkinan pengguna dapatmelakukan pemutakhiran (update), menghapus (delete), dan memasukan(insert) data geografi.
+
+Web service pada  [webgis](https://amilna.inweb.id/hal/4-WebGIS/) lainnya adalah WCSatau _Web Coverage Service,_ merupakan layanan publikasi data geospasialuntuk tipe data raster (citra satelit, foto udara, dem) secaraonline. WCS memproduksi data yang bereferensi geografis secara dinamisdari informasi geografis (basis data geospasial). Peta hasil WCSbiasanya berupa gambar dengan format PNG, GIF atau JPEG. SpesifikasiWCS dikeluarkan oleh OGC.
+
+**Kesimpulan**
+
+Peta yang dihasilkan dari WMS biasanya mendukung untuk melakukan transparansi, sehingga dapat dilakukan tumpang tindih dengan tema atau layer lainnya. Berbeda dengan WMS, ada juga yang disebut WFS (Web Feature Service) merupakan data yang dipanggil dari alamat server lain serupa dengan pemanggilan WMS, akan tetapi data yang dihasilkan berupa format vektor.
