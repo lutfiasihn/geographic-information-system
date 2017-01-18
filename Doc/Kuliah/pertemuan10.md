@@ -229,7 +229,7 @@ Cara untuk menampilkan marker dengan openlayer yaitu buka website ini [http://op
 Output dari source code diatas yaitu :
 
 <p align ="center">
-<img src="../../img/openlayer.jpg" width="600px">
+<img src="../../img/openlayer.JPG" width="600px">
 </p>
 
 **Kesimpulan**
