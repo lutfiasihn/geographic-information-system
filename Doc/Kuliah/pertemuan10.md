@@ -10,221 +10,126 @@ Markers base layer sangat mudah dipergunakan dan memungkinkan penggunaan fungsi 
 
 Cara untuk menampilkan marker dengan openlayer yaitu buka website ini [http://openlayers.org/en/latest/examples/overlay.html](http://openlayers.org/en/latest/examples/overlay.html) kemudian copy kan seluruh kodenya dan simpan dengan format html. Source code nya seperti dibawah ini:
 
-&lt;!DOCTYPE html&gt;
-
-&lt;html&gt;
-
-  &lt;head&gt;
-
-    &lt;title&gt;Overlay&lt;/title&gt;
-
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://openlayers.org/en/v3.20.1/css/ol.css&quot; type=&quot;text/css&quot;&gt;
-
-    &lt;!-- The line below is only needed for old environments like Internet Explorer and Android 4.x --&gt;
-
-    &lt;script src=&quot;https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL&quot;&gt;&lt;/script&gt;
-
-    &lt;script src=&quot;https://openlayers.org/en/v3.20.1/build/ol.js&quot;&gt;&lt;/script&gt;
-
-    &lt;script src=&quot;https://code.jquery.com/jquery-2.2.3.min.js&quot;&gt;&lt;/script&gt;
-
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot;&gt;
-
-    &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
-
-    &lt;style&gt;
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Overlay</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
       #marker {
-
         width: 30px;
-
         height: 30px;
-
         border: 7px solid #088;
-
         border-radius: 60px;
-
         background-color: #0000CD;
-
         opacity: 3.0;
 
       }
-
       #bandung {
-
         text-decoration: none;
-
         color: #FF0000;
-
         font-size: 11pt;
-
         font-weight: bold;
-
       }
-
       #marker1 {
-
         width: 30px;
-
         height: 30px;
-
         border: 7px solid #088;
-
         border-radius: 60px;
-
         background-color: #0000CD;
-
         opacity: 3.0;
-
       }
-
-    &lt;/style&gt;
-
-  &lt;/head&gt;
-
-  &lt;body&gt;
-
-    &lt;div id=&quot;map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
-
-    &lt;div style=&quot;display: none;&quot;&gt;
-
-      &lt;!-- Clickable label for Vienna --&gt;
-
-      &lt;a class=&quot;overlay&quot; id=&quot;bandung&quot; target=&quot;\_blank&quot; href=&quot;https://id.wikipedia.org/wiki/Kota\_Bandung&quot;&gt;Bandung&lt;/a&gt;
-
-      &lt;div id=&quot;marker&quot; title=&quot;Marker&quot;&gt;&lt;/div&gt;
-
-      &lt;!-- Popup --&gt;
-
-      &lt;div id=&quot;popup&quot; title=&quot;Welcome to My Maps&quot;&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-
-    &lt;script&gt;
+     
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <div style="display: none;">
+      <!-- Clickable label for Vienna -->
+      <a class="overlay" id="bandung" target="_blank" href="https://id.wikipedia.org/wiki/Kota_Bandung">Bandung</a>
+      <div id="marker" title="Marker"></div>
+      <!-- Popup -->
+      <div id="popup" title="Welcome to My Maps"></div>
+    </div>
+    <script>
 
       var map = new ol.Map({
-
         layers: [
-
           new ol.layer.Tile({
-
             source: new ol.source.XYZ({
-
-              url: &#39;https://map.vas.web.id/wmts/agm/webmercator/{z}/{x}/{y}.png&#39;
-
+              url: 'https://map.vas.web.id/wmts/agm/webmercator/{z}/{x}/{y}.png'
             })
-
           })
-
         ],
-
-        target: &#39;map&#39;,
-
+        target: 'map',
         view: new ol.View({
-
-          center: ol.proj.transform([118.015776, -2.6000285], &#39;EPSG:4326&#39;, &#39;EPSG:3857&#39;),
-
+          center: ol.proj.transform([118.015776, -2.6000285], 'EPSG:4326', 'EPSG:3857'),
           zoom: 5
-
         })
-
       });
 
       var pos = ol.proj.fromLonLat([107.609810,-6.914744]);
 
       // Vienna marker
-
       var marker = new ol.Overlay({
-
         position: pos,
-
-        positioning: &#39;center-center&#39;,
-
-        element: document.getElementById(&#39;marker&#39;),
-
+        positioning: 'center-center',
+        element: document.getElementById('marker'),
         stopEvent: false
-
       });
-
       map.addOverlay(marker);
 
       // Vienna label
-
       var bandung = new ol.Overlay({
-
         position: pos,
-
-        element: document.getElementById(&#39;bandung&#39;)
-
+        element: document.getElementById('bandung')
       });
-
       map.addOverlay(bandung);
 
       var pos1 = ol.proj.fromLonLat([113.4739,-7.1542]);
 
       // Vienna marker
-
       var marker1 = new ol.Overlay({
-
         position: pos1,
-
-        positioning: &#39;center-center&#39;,
-
-        element: document.getElementById(&#39;marker1&#39;),
-
+        positioning: 'center-center',
+        element: document.getElementById('marker1'),
         stopEvent: false
-
       });
-
       map.addOverlay(marker1);
 
       // Popup showing the position the user clicked
-
       var popup = new ol.Overlay({
-
-        element: document.getElementById(&#39;popup&#39;)
-
+        element: document.getElementById('popup')
       });
-
       map.addOverlay(popup);
 
-      map.on(&#39;click&#39;, function(evt) {
-
+      map.on('click', function(evt) {
         var element = popup.getElement();
-
         var coordinate = evt.coordinate;
-
         var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
+            coordinate, 'EPSG:3857', 'EPSG:4326'));
 
-            coordinate, &#39;EPSG:3857&#39;, &#39;EPSG:4326&#39;));
-
-        $(element).popover(&#39;destroy&#39;);
-
+        $(element).popover('destroy');
         popup.setPosition(coordinate);
-
         // the keys are quoted to prevent renaming in ADVANCED mode.
-
         $(element).popover({
-
-          &#39;placement&#39;: &#39;top&#39;,
-
-          &#39;animation&#39;: false,
-
-          &#39;html&#39;: true,
-
-          &#39;content&#39;: &#39;&lt;p&gt;The location you clicked was:&lt;/p&gt;&lt;code&gt;&#39; + hdms + &#39;&lt;/code&gt;&#39;
-
+          'placement': 'top',
+          'animation': false,
+          'html': true,
+          'content': '<p>The location you clicked was:</p><code>' + hdms + '</code>'
         });
-
-        $(element).popover(&#39;show&#39;);
-
+        $(element).popover('show');
       });
+    </script>
+  </body>
+</html>
 
-    &lt;/script&gt;
-
-  &lt;/body&gt;
-
-&lt;/html&gt;
 
 Output dari source code diatas yaitu :
 
